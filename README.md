@@ -60,3 +60,50 @@ Colecciones:
   - Healthcheck -> Comprobación de conectividad con la red IPFS
 - Node Configuration
   - Get Node Configuration -> Obtención de la configuración del Nodo
+  
+  
+  
+  ## cluster section (service.json)
+  
+  {
+
+// main cluster component configuration
+  "cluster": {                                              
+
+// peer ID
+    "id": "QmZyXksFG3vmLdAnmkXreMVZvxc4sNi1u21VxbRdNa2S1b",
+
+//node private key
+    "private_key": "<base64 representation of the key>",
+
+//above mentioned secret
+    "secret": "<32-bit hex encoded secret>",
+
+// List of peers' multiaddresses
+    "peers": [],                                            
+
+// List of bootstrap peers' multiaddresses
+    "bootstrap": [],                                 
+       
+// Abandon cluster on shutdown
+    "leave_on_shutdown": false,
+
+// Cluster RPC listen
+    "listen_multiaddress": "/ip4/0.0.0.0/tcp/9096",      
+   
+// Time between state syncs
+    "state_sync_interval": "1m0s",                        
+  
+// Time between ipfs-state syncs
+    "ipfs_sync_interval": "2m10s",
+
+// Replication factor minimum threshold. -1 == all
+    "replication_factor_min": -1,
+
+// Replication factor maximum threshold. -1 == all
+    "replication_factor_max": -1,
+
+// Time between alive-pings. See cluster monitoring section
+    "monitor_ping_interval": "15s"
+  }
+  
